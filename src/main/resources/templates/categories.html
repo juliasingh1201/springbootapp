@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>
+		</title>
+	</head>
+	<body>
+		<table style="width:100%">
+		<thead>
+			<tr>
+				<th>names</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr th:each="nm: ${names}">
+					<td th:text=${nm}>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
