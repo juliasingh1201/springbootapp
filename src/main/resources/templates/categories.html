@@ -3,20 +3,32 @@
 	<head>
 		<title>
 		</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	</head>
 	<body>
-		<table style="width:100%">
+	<div class="container">
+		<a class="btn btn-secondary" th:href="@{/categories/0}">add</a>
+		<table  class="table table-striped">
 		<thead>
 			<tr>
-				<th>names</th>
+				<th>Id</th>
+				<th>Names</th>
+				<th>Actions</th>
 			</tr>
 			</thead>
 			<tbody>
 				<tr th:each="nm: ${names}">
-					<td th:text=${nm}>
+					<td th:text=${nm.id}>
+					</td>
+					<td th:text=${nm.name}>
+					</td>
+					<td>
+					<a class="btn btn-secondary" th:href="@{/categories/{id}(id=${nm.id})}">edit</a>
+					<a class="btn btn-secondary" th:href="@{/categories/{id}/delete(id=${nm.id})}">delete</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
+	</div>
 	</body>
 </html>
